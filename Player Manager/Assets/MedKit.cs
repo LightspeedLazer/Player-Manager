@@ -6,10 +6,9 @@ public class MedKit : MonoBehaviour
 {
     public float HealPercent;
 
-    void OnCollisionEnter(Collision col)
+    void OnTriggerEnter(Collision col)
     {
-        Character character = col.gameObject.GetComponent<Character>();
-        print("help please");
-        if(character != null && character.Heal(new Health(character.MaxHealth * HealPercent,Health.HealSource.MedKit,0,false)) > 0) {Destroy(gameObject);}
+        Entity character = col.gameObject.GetComponent<Entity>();
+        if(character != null && character.Heal(new Health(character.MaxHealth * HealPercent,Health.HealSource.MedKit,0.5f,false)) > 0) {Destroy(gameObject);}
     }
 }
