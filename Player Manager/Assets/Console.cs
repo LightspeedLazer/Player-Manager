@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.Events;
-using UnityEngine.EventSystems;
+using UnityEditor;
 
 public class Console : MonoBehaviour
 {
@@ -118,4 +118,25 @@ public class Console : MonoBehaviour
     }
 
     public void Log(LogEntry entry) {consoleLog.Log(entry);}
+}
+
+[CustomEditor(typeof(Console))]
+public class ConsoleEditor : Editor
+{
+    SerializedProperty m_Log;
+    SerializedProperty m_Input;
+
+    void OnEnable()
+    {
+        m_Log = serializedObject.FindProperty("logDisplay");
+        m_Input = serializedObject.FindProperty("commandInput");
+    }
+
+    public override void OnInspectorGUI()
+    {
+        serializedObject.Update();
+        EditorGUILayout.PropertyField(m_Log, new GUIContent("Console Log"));
+        EditorGUILayout.PropertyField(m_Input, new GUIContent("Console Input"));
+        serializedObject.ApplyModifiedProperties();
+    }
 }
