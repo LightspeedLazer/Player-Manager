@@ -331,6 +331,7 @@
 "Assets/Console.cs"
 "Assets/Interactives/Button.cs"
 "Assets/Interactives/Door.cs"
+"Assets/Interactives/InteractivePart.cs"
 "Assets/TextLog.cs"
 -langversion:8.0
 
