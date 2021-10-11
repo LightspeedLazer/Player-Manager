@@ -332,6 +332,11 @@
 "Assets/Interactives/Button.cs"
 "Assets/Interactives/Door.cs"
 "Assets/Interactives/InteractivePart.cs"
+"Assets/TDT/BloonManager.cs"
+"Assets/TDT/BloonObject.cs"
+"Assets/TDT/Bloons.cs"
+"Assets/TDT/Towers/Attack.cs"
+"Assets/TDT/Towers/DartMonkey.cs"
 "Assets/TextLog.cs"
 -langversion:8.0
 
